@@ -1,0 +1,14 @@
+{
+  "name": "lesson4",
+  "version": "1.0.0",
+  "description": "initializing web app",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "THAMSANQA",
+  "license": "ISC",
+  "dependencies": {
+    "http-status-codes": "^2.2.0"
+  }
+}
