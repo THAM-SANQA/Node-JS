@@ -33,3 +33,6 @@ router.post("/", (req, res) => {
 });
 http.createServer(router.handle).listen(3000);
 console.log(`The server is listening on port number: ${port}`);
+
+// http://localhost:3000/index.html - to acess the html
+// curl http://localhost:3000
