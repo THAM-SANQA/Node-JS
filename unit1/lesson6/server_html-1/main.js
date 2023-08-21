@@ -21,6 +21,7 @@ const port = 3000,
 //     })
 //     .listen(port);
 // console.log(`The server has started and is listening on port number: ${port}`);
+
 const getViewUrl = url => {
     return `views${url}.html`;
 };
