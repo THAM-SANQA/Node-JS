@@ -23,8 +23,8 @@ MongoDB.connect(
 
     db.collection("contacts").insert(
       {
-        name: "Eddie Mercury",
-        email: "eddd@queen.com"
+        name: "Freddie Mercury",
+        email: "fred@queen.com"
       },
       (error, db) => {
         if (error) throw error;
