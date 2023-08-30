@@ -8,7 +8,7 @@ const express = require("express"),
   layouts = require("express-ejs-layouts");
 
 const mongoose = require("mongoose");
-mongoose.connect(
+mongoose.connect( //setting up database connection
   "mongodb://localhost:27017/confetti_cuisine",
   { useNewUrlParser: true }
 );
@@ -28,9 +28,9 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/subscribers", subscribersController.getAllSubscribers);
-app.get("/contact", subscribersController.getSubscriptionPage);
-app.post("/subscribe", subscribersController.saveSubscriber);
+app.get("/subscribers", subscribersController.getAllSubscribers); //adding a route to view all subscribers
+app.get("/contact", subscribersController.getSubscriptionPage); //adding a route to view the contact page
+app.post("/subscribe", subscribersController.saveSubscriber); //adding a route to handle posted form data
 
 app.get("/courses", homeController.showCourses);
 app.post("/contact", homeController.postedSignUpForm);

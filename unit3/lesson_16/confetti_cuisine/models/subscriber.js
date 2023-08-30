@@ -1,6 +1,6 @@
 "use strict";
 
-const mongoose = require("mongoose"),
+const mongoose = require("mongoose"), //require mongoose
   subscriberSchema = mongoose.Schema({
     name: String,
     email: String,
