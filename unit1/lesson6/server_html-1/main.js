@@ -25,21 +25,21 @@ const port = 3000,
 const getViewUrl = url => {
     return `views${url}.html`;
 };
-http
-    .createServer((req, res) => {
-        let viewUrl = getViewUrl(req.url);
-        fs.readFile(viewUrl, (error, data) => {
-            if (error) {
-                res.writeHead(httpStatus.NOT_FOUND);
-                res.write("<h1>FILE NOT FOUND</h1>");
-            } else {
-                res.writeHead(httpStatus.OK, {
-                    "Content-Type": "text/html"
-                });
-                res.write(data);
-            }
-            res.end();
-        });
-    })
+
+http.createServer((req, res) => {
+    let viewUrl = getViewUrl(req.url); //get the file path string
+    fs.readFile(viewUrl, (error, data) => { // read the contents of the mapped file
+        if (error) { //handle errors with a 404 response code
+            res.writeHead(httpStatus.NOT_FOUND);
+            res.write("<h1>FILE NOT FOUND</h1>");
+        } else { //respond with the file contents
+            res.writeHead(httpStatus.OK, {
+                "Content-Type": "text/html"
+            });
+            res.write(data);
+        }
+        res.end();
+    });
+})
     .listen(port);
 console.log(`The server has started and is listening on port number: ${port}`);
