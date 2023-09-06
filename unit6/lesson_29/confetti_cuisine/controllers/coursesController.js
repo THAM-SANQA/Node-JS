@@ -149,11 +149,11 @@ module.exports = {
       next();
     }
   },
-  join: (req, res, next) => {
+  join: (req, res, next) => { //Creating an action to enroll users in courses
     let courseId = req.params.id,
-      currentUser = req.user;
-    if (currentUser) {
-      User.findByIdAndUpdate(currentUser, {
+      currentUser = req.user; //Define local variables for course and user IDs
+    if (currentUser) { //Check whether the user is logged in
+      User.findByIdAndUpdate(currentUser, { //Find and update the user to connect the selected course
         $addToSet: {
           courses: courseId
         }
@@ -163,7 +163,7 @@ module.exports = {
           next();
         })
         .catch(error => {
-          next(error);
+          next(error); //Continue to error middleware with an error message if the user failed to enroll
         });
     } else {
       next(new Error("User must log in."));
