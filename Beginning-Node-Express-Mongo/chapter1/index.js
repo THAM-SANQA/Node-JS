@@ -6,7 +6,9 @@ const contactPage = fs.readFileSync('contact.html');
 const notFoundPage = fs.readFileSync('notfound.html');
 
 const server = http.createServer((req, res) => {
+//created a server with "createSever method from the http package"
     console.log(req.url);
+    //res.end('Hello Node.js')
     if (req.url === '/about') {
         res.end(aboutPage);
     } else if (req.url === '/contact') {

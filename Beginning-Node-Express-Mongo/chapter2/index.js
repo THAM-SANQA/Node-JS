@@ -1,5 +1,5 @@
-const express = require('express');
-const app = express();
+const express = require('express'); //require express module
+const app = express(); //calls the expres function to start a new Express app
 const path = require('path');
 app.use(express.static(__dirname + "/public", {
     index: false, 
