@@ -1,5 +1,5 @@
 {
-  "name": "chapter3",
+  "name": "chapter6",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-  "author": "",
+  "author": "TJ",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",

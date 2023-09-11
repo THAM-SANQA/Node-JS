@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 // With app.set('view engine','ejs'), we tell Express to use EJS as our templating engine, 
 // that any file ending in .ejs should be rendered with the EJS package.
 app.set('view engine', 'ejs');
-mongoose.connect('mongodb://127.0.0.1/my_database', {useNewUrlParser: true});
+mongoose.connect('mongodb://127.0.0.1/my_database', { useNewUrlParser: true });
 
 app.get('/', async (req, res) => {
     const blogposts = await BlogPost.find({});
@@ -37,12 +37,14 @@ app.get('/posts/new', (req, res) => {
     res.render('create');
 });
 
-app.post('/posts/store', async (req, res) => {
-    await BlogPost.create(req.body)
-        .then(blogspot => { 
-            res.redirect('/')})
-        .catch(error => { 
-            console.log(error)})
+app.post('/posts/store', async (req, res) => { //recieving form data via post route
+    await BlogPost.create(req.body) //add the form data to the blogpost
+        .then(blogspot => {
+            res.redirect('/')
+        }) //when done redirect to homepage
+        .catch(error => {
+            console.log(error)
+        })
 });
 
 app.listen(3000, () => {
