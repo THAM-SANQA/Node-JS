@@ -12,6 +12,7 @@ const BlogPostSchema = new Schema({
     username: String,
     datePosted: {
         type: Date,
+        // propety type declared like this as we need 'default'
         default: new Date()
     }
 });
